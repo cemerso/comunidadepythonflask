@@ -31,12 +31,12 @@ from comunidade import models
 engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 inspector = sqlalchemy.inspect(engine)
 if not inspector.has_table("usuario"):
-    with app.app_context()
+    with app.app_context():
         database.drop_all()
         database.create_all()
-        print('Base de dados criada')
+        print('Base de Dados criada')
 else:
-    print('Base de dados já existente')
+    print('Base de Dados já existente')
 
 
 from comunidade import routes
